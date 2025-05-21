@@ -1,0 +1,83 @@
+<section class="max-w-6xl mx-auto px-6 py-12 space-y-16">
+
+  <!-- Título principal -->
+  <div class="text-center">
+    <h1 class="text-4xl font-bold text-primary">Mi Recorrido</h1>
+    <p class="text-base text-gray-600 mt-2">Un resumen de mi experiencia, entregables y aprendizajes clave durante la pasantía.</p>
+  </div>
+
+  <!-- Experiencia -->
+  <div class="bg-base-200 p-6 rounded-xl shadow-md space-y-4">
+    <h2 class="text-2xl font-semibold text-accent">👨‍💼 Experiencia</h2>
+    <p class="text-gray-700 text-base leading-relaxed">
+      {{ experiencia() }}
+    </p>
+    <div class="text-right">
+      <button class="btn btn-sm btn-outline btn-accent" onclick="mi_modal.showModal()">
+        Ver más
+      </button>
+    </div>
+  </div>
+
+  <!-- Entregables -->
+<div class="bg-base-200 p-6 rounded-xl shadow-md space-y-3">
+  <h2 class="text-2xl font-semibold text-purple-600">📁 Entregables</h2>
+  <ul class="list-disc list-inside text-gray-700 space-y-2">
+
+    <li>
+      <a href="https://docs.google.com/document/d/1o5cZvTXjuQpE00oY-NEt_tBjAa28_RuX/edit?usp=drive_link&ouid=112047790196349309038&rtpof=true&sd=true"
+         target="_blank" class="link link-hover link-primary">
+        Informe final de pasantía
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/file/d/1yp79ztn_VwKSyz5Y145KRxTqUtXSYSUW/view?usp=sharing"
+         target="_blank" class="link link-hover link-primary">
+        PROCESO DE FACTURACIÓN MASIVA SINAPSIS
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/drive/folders/1i4BEGCbwkV5KTdH-SNcCdLeK-4URFBBV?usp=sharing"
+         target="_blank" class="link link-hover link-primary">
+        Conciliaciones Ekiiboton
+      </a>
+    </li>
+
+    <li>
+      <a href="https://drive.google.com/drive/folders/1KYH1oVAcOsqr-eZm94juOA-9pfw_JkhL?usp=sharing"
+         target="_blank" class="link link-hover link-primary">
+        Conciliación Semanal Ekiipago
+      </a>
+    </li>
+
+    <li>
+      <a href="https://docs.google.com/document/d/1LNE5hRLyxfTlp4YGN0xunYvlxBJjp1As/edit?usp=sharing&ouid=112047790196349309038&rtpof=true&sd=true"
+         target="_blank" class="link link-hover link-primary">
+        Plan de Trabajo IRENE ROSALES
+      </a>
+    </li>
+
+  </ul>
+</div>
+
+
+  <!-- Recomendaciones -->
+
+
+</section>
+
+<!-- Modal DaisyUI -->
+<dialog id="mi_modal" class="modal">
+  <div class="modal-box text-center">
+    <h3 class="font-bold text-lg text-primary mb-4">Ver más sobre mi experiencia</h3>
+    <p class="text-gray-700 mb-6">
+      Puedes acceder al documento completo de mi experiencia haciendo clic en el siguiente botón:
+    </p>
+    <a href="https://docs.google.com/document/d/1NhNpyjJ2i1QbT8_neSfpCK4xCOFQB_1YSCfrzfz7fAg/edit?usp=sharing" target="_blank" class="btn btn-accent w-full">Abrir Documento</a>
+    <form method="dialog" class="mt-4">
+      <button class="btn w-full">Cerrar</button>
+    </form>
+  </div>
+</dialog>

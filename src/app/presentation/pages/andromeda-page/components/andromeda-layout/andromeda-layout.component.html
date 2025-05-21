@@ -1,0 +1,29 @@
+<div class="space-y-6 bg-base-100 p-6 rounded-xl shadow-md">
+  <div class="flex flex-col md:flex-row items-center gap-6">
+    <img [src]="logo()" class="w-32 h-32 object-contain" />
+    <img [src]="directorFoto()" class="w-32 h-32 object-cover rounded-full border" />
+  </div>
+
+  <div>
+    <h2 class="text-2xl font-bold text-primary">Descripción</h2>
+    <p>{{ descripcion() }}</p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold text-primary">Productos/Servicios</h2>
+    <ul class="list-disc list-inside">
+      <li *ngFor="let p of productos()">{{ p }}</li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold text-primary">Redes</h2>
+    <p>🌐 <a [href]="web()" target="_blank">{{ web() }}</a></p>
+    <p>📸 Instagram:
+      <span *ngFor="let ig of instagram()">{{ ig }} </span>
+    </p>
+    <p>💼 LinkedIn:
+      <span *ngFor="let li of linkedin()">{{ li }} </span>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<section class="min-h-screen bg-base-100 text-base-content px-6 py-12 md:px-20 flex flex-col gap-14">
+
+  <!-- Encabezado -->
+  <div class="text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-accent mb-2">Departamento de Finanzas</h1>
+  </div>
+
+  <!-- Contexto del Departamento -->
+  <!-- <div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-4">
+    <h2 class="text-2xl font-semibold text-primary">📌 Contexto del Departamento</h2>
+    <p class="text-base md:text-lg leading-relaxed text-gray-700">
+      {{ firstBox() }}
+    </p>
+  </div> -->
+
+  <!-- Mi Rol y Funciones -->
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <!-- Rol -->
+    <div class="bg-base-200 p-8 rounded-2xl shadow-md flex flex-col justify-center items-center text-center">
+      <h2 class="text-2xl font-semibold text-primary mb-4">🎯 Mi Rol</h2>
+      <p class="text-4xl font-extrabold text-accent tracking-wide">
+        {{ miRol() | uppercase }}
+      </p>
+    </div>
+
+    <!-- Funciones -->
+    <div class="bg-base-200 p-8 rounded-2xl shadow-md">
+      <h2 class="text-2xl font-semibold text-primary mb-4">🛠️ Funciones Realizadas</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+        <li>Registro de conciliaciones bancarias</li>
+        <li>Facturación de ventas masiva (Sinapsis)</li>
+        <li>Conciliaciones con operadoras de Ekiipago</li>
+        <li>Reportes de conciliaciones</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Organigrama -->
+  <!-- <div class="bg-base-200 p-8 rounded-2xl shadow-md">
+    <h2 class="text-2xl font-semibold text-primary mb-4">📊 Organigrama del Departamento</h2>
+    <div class="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm">
+      [ Aquí irá el organigrama ]
+    </div>
+  </div> -->
+
+</section>
