@@ -5,7 +5,7 @@
     <img src="assets/uandromeda.png" alt="Logo Universidad Andrómeda" class="w-40 h-auto mx-auto" />
     <h1 class="text-4xl font-extrabold text-primary">Universidad Andrómeda 🧑‍🏫</h1>
     <p class="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
-      {{ uAndromedaDescription() }}
+      {{ uAndromedaDescription }}
     </p>
   </div>
 
@@ -24,14 +24,12 @@
   <div class="text-center md:text-left space-y-4">
     <h2 class="text-3xl font-bold text-primary">Oscar Thielen</h2>
     <p class="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
-      {{ oThielenDescription() }}
+      {{ oThielenDescription }}
     </p>
     <ul class="text-sm text-gray-700 space-y-2">
-      <li>✅ Innovador y estratégico</li>
-      <li>✅ Interés en tecnología y diseño web</li>
-      <li>✅ Comunicación efectiva y liderazgo</li>
-      <li>✅ Motivado por el aprendizaje continuo</li>
+      <li *ngFor="let item of fortalezas">{{ item }}</li>
     </ul>
+
   </div>
 
 </div>
