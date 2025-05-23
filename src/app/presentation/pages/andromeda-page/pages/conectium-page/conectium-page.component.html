@@ -4,56 +4,47 @@
   <div class="flex flex-col md:flex-row items-center gap-6">
     <img src="assets/conectiumLogo.jpg" alt="Logo" class="w-20 h-20 object-contain" />
     <div class="text-center md:text-left">
-      <h1 class="text-3xl font-bold text-primary">Conectium</h1>
-      <p class="text-base text-gray-600">Especialistas en transformación digital y estrategias de marca</p>
+      <h1 class="text-3xl font-bold text-primary">{{ titleHeader }}</h1>
+      <p class="text-base text-gray-600">{{ descriptionHeader }}</p>
     </div>
   </div>
 
   <!-- Descripción -->
   <div>
-    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">📌 Descripción</h2>
+    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">📌 {{ descriptionTitle }}</h2>
     <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      Conectium es una empresa especializada en la transformación digital, ofreciendo soluciones personalizadas con tecnología avanzada. Se enfocan en crear productos innovadores, distribuir contenido de manera efectiva y desarrollar estrategias digitales basadas en datos para posicionar marcas y mejorar su rentabilidad en el entorno global.
+      {{ description }}
     </p>
   </div>
 
   <!-- Productos -->
   <div>
     <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">🛠️ Productos/Servicios</h2>
-    <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      Aqustico<br />
-      Tribudeportiva<br />
-      Vida Fit<br />
-      Soy Zen<br />
-      Mandarina Tec
-    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+        <li *ngFor="let item of productosList">{{ item }}</li>
+      </ul>
   </div>
 
   <!-- Redes y enlaces -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     
     <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
-      <p class="text-base font-semibold text-gray-800 leading-relaxed">
-        <a href="https://conectium.com" target="_blank" class="link link-warning">conectium.com</a><br />
-        <a href="https://aqustico.com" target="_blank" class="link link-warning">aqustico.com</a><br />
-        <a href="https://tribudeportiva.com" target="_blank" class="link link-warning">tribudeportiva.com</a><br />
-        <a href="https://somosvidafit.com" target="_blank" class="link link-warning">vida fit</a><br />
-        <a href="https://mandarinatec.com" target="_blank" class="link link-warning">mandarina tec</a><br />
-        <a href="https://soyzen.com" target="_blank" class="link link-warning">soy zen</a>
-      </p>
+      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">{{ webPage }}</h3>
+      <li *ngFor="let item of webPageLink">
+        <a [href]="item.url" target="_blank" class="link link-warning">
+          {{ item.title }}
+        </a>
+      </li>
+
     </div>
 
     <div>
       <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
-      <p class="text-base font-semibold text-gray-800 leading-relaxed">
-        Conectium<br />
-        aqusticostreaming<br />
-        somostribudeportiva<br />
-        mandarina.tec<br />
-        somosvidafit<br />
-        _soyzen
-      </p>
+      <li *ngFor="let item of igUsername">
+        <a [href]="item.url" target="_blank" class="link link-primary">
+          {{ item.title }}
+        </a>
+      </li>
     </div>
 
     <div>
