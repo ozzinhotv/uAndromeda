@@ -4,44 +4,53 @@
   <div class="flex flex-col md:flex-row items-center gap-6">
     <img src="assets/BalsamalLogo.png" alt="Logo" class="w-20 h-20 object-contain" />
     <div class="text-center md:text-left">
-      <h1 class="text-3xl font-bold text-primary">Destilería Balsamal</h1>
-      <p class="text-base text-gray-600">Cocuy venezolano con proyección nacional e internacional</p>
+      <h1 class="text-3xl font-bold text-primary">{{ headerTitle }}</h1>
+      <p class="text-base text-gray-600">{{ headerDescription }}</p>
     </div>
   </div>
 
   <!-- Descripción -->
   <div>
-    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">📌 Descripción</h2>
+    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">{{ descriptionTitle }}</h2>
     <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      Fábrica de bebidas alcohólicas especializada en cocuy. Su actividad principal es la destilación de agave. Además de la venta nacional, exportan internacionalmente, difundiendo el valor cultural de esta bebida única.
+      {{ description }}
     </p>
   </div>
 
   <!-- Productos -->
   <div>
-    <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">🛠️ Productos/Servicios</h2>
-    <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      Cocuy Balsamal Claro y Reposado<br />
-      Verdor Claro y Reposado (Internacional)
-    </p>
+    <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">{{ productos }}</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+        <li *ngFor="let item of productosList">{{ item }}</li>
+      </ul>
   </div>
 
   <!-- Redes y enlaces -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
-      <p class="text-xl font-extrabold text-warning"><a href="https://cocuybalsamal.com" target="_blank">cocuybalsamal.com</a></p>
-    </div>
+    
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      <a [href]="website.url" target="_blank" class="link link-warning">
+        {{ website.name }}
+      </a>
+    </p>
+  </div>
 
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
-      <p class="text-xl font-extrabold text-gray-800">cocuybalsamal</p>
-    </div>
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      <a [href]="instagram.url" target="_blank" class="link link-warning">
+        {{ instagram.handle }}
+      </a>
+    </p>
+  </div>
 
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
-      <p class="text-xl font-extrabold text-gray-800">No tiene</p>
-    </div>
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      {{ linkedins }}
+    </p>
   </div>
 
 </div>

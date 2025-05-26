@@ -3,50 +3,55 @@
   <!-- Cabecera -->
   <div class="flex flex-col md:flex-row items-center gap-6">
     <img src="assets/spinmovilLogo.png" alt="Logo" class="w-20 h-20 object-contain" />
-    <div class="text-center md:text-left">
-      <h1 class="text-3xl font-bold text-primary">Spinmovil</h1>
-      <p class="text-base text-gray-600">Multichannel Marketing Hub para campañas más efectivas</p>
+   <div class="text-center md:text-left">
+      <h1 class="text-3xl font-bold text-primary">{{ headerTitle }}</h1>
+      <p class="text-base text-gray-600">{{ headerDescription }}</p>
     </div>
   </div>
 
   <!-- Descripción -->
   <div>
-    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">📌 Descripción</h2>
+    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">{{ descriptionTitle }}</h2>
     <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      Spinmovil es una extensión de Conectium especializada en el Multichannel Marketing Hub (MMH), una plataforma que gestiona campañas de marketing de forma eficaz, buscando ahorrar tiempo y esfuerzo y mejorar la eficiencia operativa de las empresas.
+      {{ description }}
     </p>
   </div>
 
   <!-- Productos -->
   <div>
-    <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">🛠️ Productos/Servicios</h2>
-    <p class="text-base font-semibold text-gray-800 leading-relaxed">
-      – Canales preferidos<br />
-      – Mensajería de texto<br />
-      – Email marketing<br />
-      – WhatsApp Business API
-    </p>
+    <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">{{ productos }}</h2>
+    <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+        <li *ngFor="let item of productosList">{{ item }}</li>
+      </ul>
   </div>
 
   <!-- Redes y enlaces -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
-      <p class="text-base font-semibold text-warning">
-        <a href="https://spinmovil.com/" target="_blank" class="link link-warning">spinmovil.com</a>
-      </p>
-    </div>
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      <a [href]="website.url" target="_blank" class="link link-warning">
+        {{ website.name }}
+      </a>
+    </p>
+  </div>
 
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
-      <p class="text-base font-semibold text-gray-800">spinmovil</p>
-    </div>
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      <a [href]="instagram.url" target="_blank" class="link link-warning">
+        {{ instagram.handle }}
+      </a>
+    </p>
+  </div>
 
-    <div>
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
-      <p class="text-base font-semibold text-gray-800">No tiene</p>
-    </div>
+  <div>
+    <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      {{ linkedins }}
+    </p>
+  </div>
     
   </div>
 
