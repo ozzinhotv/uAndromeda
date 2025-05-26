@@ -1,29 +1,64 @@
-<div class="space-y-6 bg-base-100 p-6 rounded-xl shadow-md">
+<div class="w-full max-w-5xl mx-auto px-6 py-10 space-y-12">
+  <!-- Cabecera -->
   <div class="flex flex-col md:flex-row items-center gap-6">
-    <img [src]="logo()" class="w-32 h-32 object-contain" />
-    <img [src]="directorFoto()" class="w-32 h-32 object-cover rounded-full border" />
+    <img [src]="logo" alt="Logo" class="w-20 h-20 object-contain" />
+    <div class="text-center md:text-left">
+      <h1 class="text-3xl font-bold text-primary">{{ headerTitle }}</h1>
+      <p class="text-base text-gray-600">{{ headerDescription }}</p>
+    </div>
   </div>
 
+  <!-- Descripción -->
   <div>
-    <h2 class="text-2xl font-bold text-primary">Descripción</h2>
-    <p>{{ descripcion() }}</p>
-  </div>
-
-  <div>
-    <h2 class="text-xl font-semibold text-primary">Productos/Servicios</h2>
-    <ul class="list-disc list-inside">
-      <li *ngFor="let p of productos()">{{ p }}</li>
-    </ul>
-  </div>
-
-  <div>
-    <h2 class="text-xl font-semibold text-primary">Redes</h2>
-    <p>🌐 <a [href]="web()" target="_blank">{{ web() }}</a></p>
-    <p>📸 Instagram:
-      <span *ngFor="let ig of instagram()">{{ ig }} </span>
+    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">{{ descriptionTitle }}</h2>
+    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+      {{ description }}
     </p>
-    <p>💼 LinkedIn:
-      <span *ngFor="let li of linkedin()">{{ li }} </span>
-    </p>
+  </div>
+
+  <!-- Productos -->
+  <div *ngIf="productosList && productosList.length">
+  <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">{{ productos }}</h2>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+    <li *ngFor="let item of productosList">{{ item }}</li>
+  </ul>
+</div>
+
+  <!-- Redes y enlaces -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Página web -->
+    <div *ngIf="website">
+      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
+      <p class="text-base font-semibold text-gray-800 leading-relaxed">
+        <a [href]="website.url" target="_blank" class="link link-warning">
+          {{ website.name }}
+        </a>
+      </p>
+    </div>
+
+    <!-- Instagram -->
+    <div *ngIf="instagram">
+      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
+      <p class="text-base font-semibold text-gray-800 leading-relaxed">
+        <a [href]="instagram.url" target="_blank" class="link link-warning">
+          {{ instagram.handle }}
+        </a>
+      </p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div *ngIf="linkedins">
+      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
+      <div class="text-base font-semibold text-gray-800 leading-relaxed">
+        <ng-container *ngIf="linkedins.length; else showText">
+          <div *ngFor="let li of linkedins">
+            <a [href]="li.url" target="_blank" class="link link-warning">{{ li.name }}</a>
+          </div>
+        </ng-container>
+        <ng-template #showText>
+          <p>{{ linkedins }}</p>
+        </ng-template>
+      </div>
+    </div>
   </div>
 </div>

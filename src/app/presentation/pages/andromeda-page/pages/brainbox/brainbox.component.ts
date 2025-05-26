@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class BrainboxComponent {
 
+  logo = 'assets/brainboxLogo.png';
   headerTitle = 'Brainbox';
   headerDescription = 'Flexibilidad y colaboración en un solo espacio de trabajo'
 

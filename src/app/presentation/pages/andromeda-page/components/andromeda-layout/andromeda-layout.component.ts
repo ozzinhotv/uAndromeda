@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-andromeda-layout',
@@ -8,22 +8,19 @@ import { Component, signal } from '@angular/core';
 })
 export class AndromedaLayoutComponent {
 
-  logo = signal('');
-  directorFoto = signal('');
-  descripcion = signal('');
-  productos = signal<string[]>([]);
-  web = signal('');
-  instagram = signal<string[]>([]);
-  linkedin = signal<string[]>([]);
+  @Input() logo: string = '';
+  @Input() headerTitle: string = '';
+  @Input() headerDescription: string = '';
+  @Input() descriptionTitle: string = '';
+  @Input() description: string = '';
+  @Input() productos: string = '';
+  @Input() productosList: string[] = [];
+  @Input() productosDescription: string = '';
 
-  loadContent(data: any) {
-    this.logo.set(data.logo);
-    this.directorFoto.set(data.directorFoto);
-    this.descripcion.set(data.descripcion);
-    this.productos.set(data.productos);
-    this.web.set(data.web);
-    this.instagram.set(data.instagram);
-    this.linkedin.set(data.linkedin);
-  }
+  @Input() website: { name: string; url: string } | null = null;
+  @Input() instagram: { handle: string; url: string } | null = null;
+  @Input() linkedins: { name: string; url: string }[] = []
+}
 
- }
+
+ 

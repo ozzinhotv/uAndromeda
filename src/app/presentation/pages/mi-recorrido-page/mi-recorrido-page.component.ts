@@ -11,7 +11,7 @@ export class MirecorridoPageComponent {
   abrirModal() {
   const modal = document.getElementById('mi_modal') as HTMLDialogElement;
   modal?.showModal();
-}
+  }
 
   experiencia = ('Hace dos años empecé mi viaje en la galaxia Andrómeda, donde mi primera nave espacial fue el departamento de finanzas, capitaneado por Rafael Rollingson, en el área de administración...')
 
