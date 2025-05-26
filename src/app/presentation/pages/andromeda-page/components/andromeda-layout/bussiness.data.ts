@@ -55,7 +55,7 @@ export const BUSINESSES = {
   },
 
   ekiipago: {
-    logo: '', // agrégalo si tienes
+    logo: 'assets/ekiipagoLogo.jpg',
     headerTitle: 'Ekiipago',
     headerDescription: 'Soluciones de pago tecnológicas para el comercio moderno',
     descriptionTitle: '📌 Descripción',
@@ -69,7 +69,7 @@ export const BUSINESSES = {
   },
 
   holadoc: {
-    logo: '', // agrégalo si tienes
+    logo: 'assets/holaDocLogo.jpg', // agrégalo si tienes
     headerTitle: 'Holadoc',
     headerDescription: 'Consultas médicas online desde cualquier lugar',
     descriptionTitle: '📌 Descripción',
@@ -86,7 +86,7 @@ export const BUSINESSES = {
   },
 
   peregrina: {
-    logo: '', // agrégalo si tienes
+    logo: 'assets/peregrinaLogo.jpg', // agrégalo si tienes
     headerTitle: 'Peregrina',
     headerDescription: 'Cervezas artesanales con innovación venezolana',
     descriptionTitle: '📌 Descripción',
@@ -105,7 +105,7 @@ export const BUSINESSES = {
   },
 
   spinmovil: {
-    logo: '', // agrégalo si tienes
+    logo: 'assets/spinmovilLogo.png', // agrégalo si tienes
     headerTitle: 'Spinmovil',
     headerDescription: 'Multichannel Marketing Hub para campañas más efectivas',
     descriptionTitle: '📌 Descripción',
