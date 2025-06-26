@@ -80,8 +80,7 @@ export const BUSINESSES = {
     website: { name: 'holadoc.com', url: 'https://holadoc.com/' },
     instagram: { handle: '@somosholadoc', url: 'https://instagram.com/somosholadoc' },
     linkedins: [
-      { name: 'Holadoc', url: 'https://www.linkedin.com/company/holadoc' },
-      { name: 'Sinapsis', url: 'https://www.linkedin.com/company/sinapsis' },
+      { name: 'Holadoc', url: 'https://www.linkedin.com/products/andromedaventure-holadoc/' }
     ],
   },
 

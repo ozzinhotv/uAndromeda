@@ -1,0 +1,31 @@
+<section class="max-w-6xl mx-auto px-6 pt-28 space-y-20 animate__animated animate__fadeIn">
+
+  <!-- Cabecera -->
+  <div class="flex flex-col md:flex-row items-center gap-10 text-center md:text-left">
+    <img src="assets/uandromeda.png" alt="Logo Universidad Andrómeda" class="w-48 h-auto mx-auto md:mx-0" />
+    <div class="flex-1 space-y-4">
+      <h1 class="text-4xl font-extrabold text-accent font-montserratAlt">Universidad Andrómeda 🧑‍🏫</h1>
+      <p class="text-base text-gray-700 leading-relaxed">
+        {{ uAndromedaDescription }}
+      </p>
+    </div>
+  </div>
+
+  <!-- Separador -->
+  <hr class="border-t border-gray-300" />
+
+  <!-- Pilares -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div
+      *ngFor="let item of features"
+      class="card bg-base-100 shadow-lg border hover:shadow-xl transition"
+    >
+      <div class="card-body items-center text-center">
+        <h2 class="card-title text-xl font-bold">{{ item.title }}</h2>
+        <span class="text-6xl">{{ item.emoji }}</span>
+        <p class="text-sm text-gray-600 mt-2">{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+
+</section>

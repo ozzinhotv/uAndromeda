@@ -1,0 +1,54 @@
+<!-- Sección: Introducción -->
+<div class="space-y-4 mx-auto px-4 animate__animated animate__fadeIn">
+  <p class="text-base text-base-content/90 leading-relaxed">
+    {{ introduccion }}
+  </p>
+
+  <!-- Botones de acción -->
+  <div class="flex flex-wrap gap-4 mt-4">
+    <a 
+      href="https://www.linkedin.com/in/oscar-thielen-villanueva-74b105186/?originalSubdomain=ve" 
+      target="_blank" 
+      class="btn btn-outline btn-info">
+      🔗 Ver perfil en LinkedIn
+    </a>
+    <a 
+      href="https://drive.google.com/file/d/1GDLMK0-W5aKD2A0wfOHLvuY_k05NkEMp/view?usp=sharing" 
+      target="_blank" 
+      class="btn btn-info">
+      📄 Abrir CV
+    </a>
+  </div>
+</div>
+
+<!-- Sección: Experiencia -->
+<div class="bg-base-200 p-8 mt-10 rounded-2xl shadow space-y-6 mx-auto px-4">
+  <h2 class="text-2xl font-bold text-success flex items-center gap-2">
+    👨‍💼 Experiencia
+  </h2>
+  <p class="text-base text-base-content/90 leading-relaxed font-medium">
+    {{ experiencia }}
+  </p>
+  <div class="text-right">
+    <button class="btn btn-accent btn-sm" (click)="abrirModal()">Ver más</button>
+  </div>
+</div>
+
+<!-- Modal: Ver más experiencia -->
+<dialog id="mi_modal" class="modal">
+  <div class="modal-box max-w-md text-center space-y-6">
+    <h3 class="text-lg font-bold text-primary">Más sobre mi experiencia</h3>
+    <p class="text-base text-base-content/80">
+      Puedes acceder al documento completo con detalles de mi recorrido profesional:
+    </p>
+    <a 
+      href="https://docs.google.com/document/d/1NhNpyjJ2i1QbT8_neSfpCK4xCOFQB_1YSCfrzfz7fAg/edit?usp=sharing" 
+      target="_blank" 
+      class="btn btn-accent w-full">
+      📄 Abrir Documento
+    </a>
+    <form method="dialog">
+      <button class="btn w-full">Cerrar</button>
+    </form>
+  </div>
+</dialog>

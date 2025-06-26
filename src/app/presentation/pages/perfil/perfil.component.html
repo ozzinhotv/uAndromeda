@@ -1,0 +1,33 @@
+<div class="max-w-7xl mx-auto px-4 py-8 pt-24 animate__animated animate__fadeIn">
+  <h1 class="text-3xl font-montserratAlt font-extrabold text-accent pb-2 mb-4">Perfil</h1>
+
+  <!-- Tabs -->
+  <div class="flex space-x-6 border-b-2 border-gray-200 mt-4">
+    <a 
+      routerLink="experiencia" 
+      routerLinkActive="text-teal-600 border-b-4 border-teal-600"
+      class="py-2 text-gray-700 text-xl font-semibold flex items-center gap-2 transition hover:text-teal-600"
+    >
+      Experiencia <span>💼</span>
+    </a>
+    <a 
+      routerLink="certificados" 
+      routerLinkActive="text-teal-600 border-b-4 border-teal-600"
+      class="py-2 text-gray-700 text-xl font-semibold flex items-center gap-2 transition hover:text-teal-600"
+    >
+      Certificados <span>🎓</span>
+    </a>
+    <a 
+      routerLink="proyectos" 
+      routerLinkActive="text-teal-600 border-b-4 border-teal-600"
+      class="py-2 text-gray-700 text-xl font-semibold flex items-center gap-2 transition hover:text-teal-600"
+    >
+      Proyectos <span>📁</span>
+    </a>
+  </div>
+
+  <!-- Aquí se carga la ruta activa -->
+  <div class="mt-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>

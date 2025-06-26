@@ -1,64 +1,75 @@
-<div class="w-full max-w-5xl mx-auto px-6 py-10 space-y-12">
+<div class="w-full max-w-6xl mx-auto px-6 sm:px-8 py-16 space-y-16 animate__animated animate__fadeIn">
+
   <!-- Cabecera -->
-  <div class="flex flex-col md:flex-row items-center gap-6">
-    <img [src]="logo" alt="Logo" class="w-20 h-20 object-contain" />
-    <div class="text-center md:text-left">
-      <h1 class="text-3xl font-bold text-primary">{{ headerTitle }}</h1>
-      <p class="text-base text-gray-600">{{ headerDescription }}</p>
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <img [src]="logo" alt="Logo" class="w-24 h-24 object-contain" />
+    <div class="text-center md:text-left flex-1 space-y-2">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-accent font-montserratAlt leading-tight tracking-tight">
+        {{ headerTitle }}
+      </h1>
+      <p class="text-base sm:text-lg text-base-content/70">{{ headerDescription }}</p>
     </div>
   </div>
 
-  <!-- Descripción -->
-  <div>
-    <h2 class="text-base font-semibold text-pink-500 mb-1 flex items-center gap-1">{{ descriptionTitle }}</h2>
-    <p class="text-base font-semibold text-gray-800 leading-relaxed">
+  <!-- Línea divisoria -->
+  <hr class="w-4/5 mx-auto border-t-2 border-accent opacity-70 rounded-full" />
+
+  <!-- Card: Descripción -->
+  <div class="bg-base-200 rounded-2xl p-8 shadow-md space-y-3">
+    <h2 class="text-2xl sm:text-3xl font-bold text-success tracking-wide">
+      {{ descriptionTitle }}
+    </h2>
+    <p class="text-base sm:text-lg text-base-content/90 leading-relaxed font-medium">
       {{ description }}
     </p>
   </div>
 
-  <!-- Productos -->
-  <div *ngIf="productosList && productosList.length">
-  <h2 class="text-base font-semibold text-purple-500 mb-1 flex items-center gap-1">{{ productos }}</h2>
-  <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
-    <li *ngFor="let item of productosList">{{ item }}</li>
-  </ul>
-</div>
+  <!-- Grid de Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-  <!-- Redes y enlaces -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Página web -->
-    <div *ngIf="website">
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">🌐 Página Web</h3>
-      <p class="text-base font-semibold text-gray-800 leading-relaxed">
-        <a [href]="website.url" target="_blank" class="link link-warning">
+    <!-- Card: Productos y Servicios -->
+    <div *ngIf="productosList && productosList.length" class="bg-base-200 rounded-2xl p-8 shadow-md space-y-4">
+      <h3 class="text-2xl font-bold text-info tracking-wide">🛍️ Productos y Servicios</h3>
+      <ul class="list-disc list-inside text-base-content/90 text-base sm:text-lg font-medium space-y-2">
+        <li *ngFor="let item of productosList">{{ item }}</li>
+      </ul>
+    </div>
+
+    <!-- Card: Redes y Enlaces -->
+    <div class="bg-base-200 rounded-2xl p-8 shadow-md space-y-6">
+
+      <!-- Página Web -->
+      <div *ngIf="website">
+        <h4 class="text-2xl font-bold text-info tracking-wide">🌐 Página Web</h4>
+        <a [href]="website.url" target="_blank" class="link link-primary text-base sm:text-lg font-medium">
           {{ website.name }}
         </a>
-      </p>
-    </div>
+      </div>
 
-    <!-- Instagram -->
-    <div *ngIf="instagram">
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">📸 Instagram</h3>
-      <p class="text-base font-semibold text-gray-800 leading-relaxed">
-        <a [href]="instagram.url" target="_blank" class="link link-warning">
+      <!-- Instagram -->
+      <div *ngIf="instagram">
+        <h4 class="text-2xl font-bold text-info tracking-wide">📸 Instagram</h4>
+        <a [href]="instagram.url" target="_blank" class="link link-primary text-base sm:text-lg font-medium">
           {{ instagram.handle }}
         </a>
-      </p>
-    </div>
-
-    <!-- LinkedIn -->
-    <div *ngIf="linkedins">
-      <h3 class="text-sm text-blue-500 font-medium flex items-center gap-1">💼 LinkedIn</h3>
-      <div class="text-base font-semibold text-gray-800 leading-relaxed">
-        <ng-container *ngIf="linkedins.length; else showText">
-          <div *ngFor="let li of linkedins">
-            <a [href]="li.url" target="_blank" class="link link-warning">{{ li.name }}</a>
-          </div>
-        </ng-container>
-        <ng-template #showText>
-          <p>{{ linkedins }}</p>
-        </ng-template>
       </div>
+
+      <!-- LinkedIn -->
+      <div *ngIf="linkedins">
+        <h4 class="text-2xl font-bold text-info tracking-wide">💼 LinkedIn</h4>
+        <div class="text-base sm:text-lg text-base-content/80 font-medium space-y-1">
+          <ng-container *ngIf="linkedins.length; else showText">
+            <div *ngFor="let li of linkedins">
+              <a [href]="li.url" target="_blank" class="link link-primary">{{ li.name }}</a>
+            </div>
+          </ng-container>
+          <ng-template #showText>
+            <p>{{ linkedins }}</p>
+          </ng-template>
+        </div>
+      </div>
+
     </div>
   </div>
+
 </div>

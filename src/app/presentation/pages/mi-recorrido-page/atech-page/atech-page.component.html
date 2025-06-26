@@ -1,0 +1,67 @@
+<section class="w-full max-w-6xl mx-auto pt-24 px-6 sm:px-8 py-16 space-y-16 animate__animated animate__fadeIn">
+
+  <!-- Encabezado -->
+  <div class="text-center space-y-2">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-accent font-montserratAlt tracking-tight">
+      Departamento A-Tech
+    </h1>
+    <hr class="w-3/4 mx-auto border-t-2 border-accent opacity-70 rounded-full mt-4" />
+  </div>
+
+  <!-- Grid: Mi Rol y Funciones -->
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Mi Rol -->
+    <div class="bg-base-200 p-10 rounded-2xl shadow-md text-center flex flex-col justify-center items-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-primary mb-4 flex items-center gap-2">🎯 Mi Rol</h2>
+      <p class="text-4xl sm:text-5xl font-extrabold text-accent font-montserratAlt tracking-widest uppercase">
+        {{ miRol | uppercase }}
+      </p>
+    </div>
+
+    <!-- Funciones Realizadas -->
+    <div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-primary flex items-center gap-2">🛠️ Funciones Realizadas</h2>
+      <ul class="list-disc list-inside text-base-content/80 text-base sm:text-lg font-medium space-y-2">
+        <li *ngFor="let item of funcionesRealizadas">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cursos Realizados -->
+<div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-6">
+  <h2 class="text-xl sm:text-2xl font-bold text-purple-600 flex items-center gap-2">📚 Cursos Realizados</h2>
+
+  <div class="grid gap-4">
+    <div
+      *ngFor="let item of cursosRealizados"
+      class="flex items-center justify-between bg-white/50 border border-base-300 rounded-xl px-4 py-3 hover:shadow-md transition"
+    >
+      <span class="text-base sm:text-lg font-medium text-base-content/90">{{ item.titulo }}</span>
+      <a
+        [href]="item.url"
+        target="_blank"
+        class="btn btn-outline btn-sm btn-primary whitespace-nowrap"
+      >
+        Ver curso
+      </a>
+    </div>
+  </div>
+</div>
+
+  <!-- Proyectos a Futuro -->
+<div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-6">
+  <h2 class="text-xl sm:text-2xl font-bold text-success flex items-center gap-2">🏗️ Proyectos a Futuro (Q3)</h2>
+
+  <div class="space-y-4">
+    <div
+      *ngFor="let item of proyectosAFuturo"
+      class="flex items-start gap-3 bg-white/50 border border-base-300 rounded-xl px-4 py-3 hover:shadow transition"
+    >
+      <span class="text-success text-lg mt-1">🧩</span>
+      <p class="text-base sm:text-lg font-medium text-base-content/90">{{ item }}</p>
+    </div>
+  </div>
+</div>
+
+
+</section>

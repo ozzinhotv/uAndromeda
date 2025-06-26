@@ -1,22 +1,50 @@
-<div class="navbar bg-accent shadow-sm">
+<div class="navbar bg-neutral text-base-100 fixed top-0 left-0 w-full z-50 shadow-sm">
+  <!-- Logo -->
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl text-base-100 font-bold">Oscar Thielen</a>
+    <a class="btn btn-ghost text-xl font-bold font-montserratAlt" routerLink="/">
+      Oscar <span class="text-accent">Thielen</span>
+    </a>
   </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1 text-base-100">
-        <li>
-            <a class="font-bold" routerLink="/presentation/introduction" routerLinkActive="text-warning">Introduccion</a>
-        </li>
-        <li>
-            <a class="font-bold" routerLink="/presentation/andromeda" routerLinkActive="text-warning">Andromeda</a>
-        </li>
-        <li>
-            <a class="font-bold" routerLink="/presentation/finanzas" routerLinkActive="text-warning">Finanzas</a>
-        </li>
-        <li>
-            <a class="font-bold" routerLink="/presentation/miRecorrido" routerLinkActive="text-warning">Mi Recorrido</a>
-        </li>
-     
+
+  <!-- Menú responsive DaisyUI -->
+  <div class="dropdown dropdown-end md:hidden">
+    <label tabindex="0" class="btn btn-ghost">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </label>
+    <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 text-neutral rounded-box w-52">
+      <li><a routerLink="/presentation/introduction">Introducción</a></li>
+      <li><a routerLink="/presentation/andromeda">Andrómeda</a></li>
+      <li>
+        <details>
+          <summary>Mi Recorrido</summary>
+          <ul>
+            <li><a routerLink="/presentation/miRecorrido/finanzas">Finanzas</a></li>
+            <li><a routerLink="/presentation/miRecorrido/atech">A-Tech</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a routerLink="/presentation/u-andromeda">U-Andromeda</a></li>
+      <li><a routerLink="/presentation/perfil">Perfil</a></li>
     </ul>
   </div>
+
+  <!-- Menú horizontal para desktop -->
+  <ul class="menu menu-horizontal hidden md:flex px-1 text-lg">
+    <li><a routerLink="/presentation/introduction" routerLinkActive="text-accent">Introducción</a></li>
+    <li><a routerLink="/presentation/andromeda" routerLinkActive="text-accent">Andrómeda</a></li>
+    <li tabindex="0">
+      <details>
+        <summary routerLinkActive="text-accent">Mi Recorrido</summary>
+        <ul class="p-2 bg-base-100 text-neutral rounded-box">
+          <li><a routerLink="/presentation/miRecorrido/finanzas">Finanzas</a></li>
+          <li><a routerLink="/presentation/miRecorrido/atech">A-Tech</a></li>
+        </ul>
+      </details>
+    </li>
+    <li><a routerLink="/presentation/u-andromeda" routerLinkActive="text-accent">U-Andromeda</a></li>
+    <li><a routerLink="/presentation/perfil" routerLinkActive="text-accent">Perfil</a></li>
+  </ul>
 </div>

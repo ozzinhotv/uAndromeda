@@ -1,5 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import "animate.css";
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, corporate;
+}
+
+.font-montserratAlt {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

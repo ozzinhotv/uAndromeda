@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FinanzasPageComponent } from "./finanzas-page/finanzas-page.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-mi-recorrido-page',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './mi-recorrido-page.component.html',
 })
 export class MirecorridoPageComponent {

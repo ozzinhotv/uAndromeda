@@ -1,37 +1,75 @@
-<section class="max-w-5xl mx-auto px-6 py-12 space-y-16">
 
-  <!-- Sección: Universidad Andrómeda -->
-  <div class="text-center space-y-6">
-    <img src="assets/uandromeda.png" alt="Logo Universidad Andrómeda" class="w-40 h-auto mx-auto" />
-    <h1 class="text-4xl font-extrabold text-primary">Universidad Andrómeda 🧑‍🏫</h1>
-    <p class="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
-      {{ uAndromedaDescription }}
-    </p>
+<app-carousel class="w-full px-6 pt-24 space-y-12 max-w-7xl mx-auto" />
+
+<section class="w-full px-6 max-w-7xl mx-auto">
+<!-- Sección de palabras flotantes -->
+<div class="w-full space-y-4">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-accent font-montserratAlt">
+    Andrómeda es...
+  </h1>
+  <div class="relative h-[300px] sm:h-[350px] md:h-[400px] w-full overflow-hidden">
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-primary animate-float" style="top: 5%; left: 10%;">Innovación</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-bold text-success animate-float" style="top: 18%; left: 22%;">Esfuerzo</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-bold text-secondary animate-float" style="top: 10%; left: 40%;">Familia</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-orange-500 animate-float" style="top: 66%; left: 26%;">Pasión</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-bold text-info animate-float" style="top: 6%; left: 66%;">Oportunidad</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-medium text-pink-600 animate-float" style="top: 30%; left: 78%;">Crecimiento</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-accent animate-float" style="top: 70%; left: 50%;">Tecnología</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-bold text-blue-500 animate-float" style="top: 52%; left: 82%;">Unión</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-indigo-500 animate-float" style="top: 78%; left: 10%;">Desafíos</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-purple-600 animate-float" style="top: 42%; left: 58%;">Futuro</span>
+  <span class="absolute text-xl sm:text-2xl md:text-3xl font-semibold text-error animate-float" style="top: 82%; left: 70%;">Compromiso</span>
+</div>
+
+</div>
+<hr class="border-t-4 border-accent mx-auto my-8 opacity-60 rounded-full" />
+
+<!-- Nueva Sección: ¿Qué encontrarás en esta página? -->
+<div class="space-y-8">
+  <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-accent font-montserratAlt">¿Qué encontrarás aquí? 🔍</h2>
+  <p class="text-lg text-gray-700 mx-auto leading-relaxed">
+    Esta página resume mi experiencia en Andrómeda y todo lo aprendido en el área de desarrollo web. Explora cada sección para conocer en detalle mis funciones, proyectos, formación y el entorno donde me desarrollé profesionalmente.
+  </p>
+
+<div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+  <div 
+    *ngFor="let item of seccionesNavbar"
+    (click)="navegar(item.ruta)"
+    class="bg-base-200 border border-base-300 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 space-y-4 cursor-pointer hover:scale-[1.02]"
+  >
+    <h3 class="text-2xl font-bold text-primary font-montserratAlt">{{ item.titulo }}</h3>
+    <p class="text-base text-base-content/80">{{ item.descripcion }}</p>
   </div>
+</div>
+</div>
 
-  <hr>
+<hr class="border-t-4 border-accent mx-auto my-8 opacity-60 rounded-full" />
 
- <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-base-100 p-6 rounded-xl shadow-md">
+<!-- Sección de presentación personal -->
+ <div class="max-w-7xl w-full mt-2 flex flex-col md:flex-row items-center gap-16 bg-base-100 p-10 rounded-2xl shadow-2xl">
 
   <!-- Imagen de perfil -->
   <img 
     src="assets/fotoMia.jpg" 
     alt="Oscar Thielen" 
-    class="w-full md:w-64 h-auto object-contain rounded-lg shadow-lg"
+    class="w-full md:w-96 h-auto object-contain rounded-xl shadow-xl"
   />
 
   <!-- Información personal -->
-  <div class="text-center md:text-left space-y-4">
-    <h2 class="text-3xl font-bold text-primary">Oscar Thielen</h2>
-    <p class="text-base text-gray-700 max-w-2xl mx-auto leading-relaxed">
+  <div class="text-center md:text-left space-y-6 flex-1">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-accent font-montserratAlt">Oscar Thielen</h2>
+
+    <p class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto md:mx-0">
       {{ oThielenDescription }}
     </p>
-    <ul class="text-sm text-gray-700 space-y-2">
-      <li *ngFor="let item of fortalezas">{{ item }}</li>
-    </ul>
 
+    <ul class="text-base text-gray-800 space-y-2 font-medium">
+      <li *ngFor="let item of fortalezas" class="flex items-center gap-2 justify-center md:justify-start">
+        <span class="text-green-600">✔</span>
+        <span>{{ item }}</span>
+      </li>
+    </ul>
   </div>
 
 </div>
-
 </section>

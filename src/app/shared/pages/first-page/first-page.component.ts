@@ -6,4 +6,12 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   templateUrl: './first-page.component.html',
 })
-export class FirstPageComponent { }
+export class FirstPageComponent { 
+
+  logo = 'assets/logo_andromeda.png';
+
+  slogan = 'Haciendo un mundo mejor, haciendo mejores cosas'
+
+
+
+}

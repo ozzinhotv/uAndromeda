@@ -1,0 +1,52 @@
+<div class="px-6 mx-auto animate__animated animate__fadeIn">
+
+  <!-- Introducción -->
+  <div class="space-y-4">
+    <h1 class="text-4xl font-extrabold text-primary">🚀 Proyectos personales</h1>
+    <p class="text-lg text-gray-700 max-w-3xl leading-relaxed">
+      Estos son algunos proyectos en los que he trabajado en mi tiempo libre, enfocados en tecnología, impacto social y diseño.
+    </p>
+  </div>
+
+  <div class="container mx-auto my-8">
+  <div class="grid md:grid-cols-2 gap-6">
+    <div *ngFor="let proyecto of proyectos" class="card hover:scale-[1.02] transition transform border-2 border-[#138496] rounded-lg shadow-md">
+      <img 
+        [src]="proyecto.imagen" 
+        alt="Imagen del proyecto"
+        class="h-64 w-full object-cover rounded-t cursor-pointer"
+        (click)="abrirModal(proyecto)"
+      />
+      <div class="p-5">
+        <h3 class="text-xl font-bold text-[#138496] uppercase">{{ proyecto.titulo }}</h3>
+        <p class="text-sm text-muted mt-1">{{ proyecto.librerias }}</p>
+        <p class="text-base mt-2">{{ proyecto.descripcion }}</p>
+
+        <div class="pt-3">
+          <button 
+            *ngIf="proyecto.verDetalles; else enDesarrollo"
+            class="btn btn-outline btn-primary w-full"
+            (click)="verDetalles(proyecto)"
+          >
+            Ver Proyecto
+          </button>
+          <ng-template #enDesarrollo>
+            <p class="text-lg text-warning text-center">Proyecto en desarrollo</p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para imagen grande -->
+<dialog #modal class="modal" [open]="modalAbierto">
+  <div class="modal-box max-w-4xl">
+    <h3 class="font-bold text-lg mb-4 text-[#138496]">{{ proyectoSeleccionado?.titulo }}</h3>
+    <img [src]="proyectoSeleccionado?.imagen" class="w-full h-auto object-contain rounded shadow" />
+    <form method="dialog" class="text-right mt-5">
+      <button class="btn" (click)="cerrarModal()">Cerrar</button>
+    </form>
+  </div>
+</dialog>
+

@@ -1,0 +1,58 @@
+<section class="w-full max-w-6xl mx-auto pt-24 px-6 sm:px-8 py-16 space-y-16 animate__animated animate__fadeIn">
+
+  <!-- Encabezado -->
+  <div class="text-center space-y-2">
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-accent font-montserratAlt tracking-tight">
+      Departamento de Finanzas
+    </h1>
+    <hr class="w-3/4 mx-auto border-t-2 border-accent opacity-70 rounded-full mt-4" />
+  </div>
+
+  <!-- Grid: Mi Rol y Funciones -->
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <!-- Card: Mi Rol -->
+    <div class="bg-base-200 p-10 rounded-2xl shadow-md text-center flex flex-col justify-center items-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-primary mb-4 flex items-center gap-2">🎯 Mi Rol</h2>
+      <p class="text-4xl sm:text-5xl font-extrabold text-accent font-montserratAlt tracking-widest uppercase">
+        {{ miRol | uppercase }}
+      </p>
+    </div>
+
+    <!-- Card: Funciones -->
+    <div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-4">
+      <h2 class="text-xl sm:text-2xl font-bold text-primary flex items-center gap-2">🛠️ Funciones Realizadas</h2>
+      <ul class="list-disc list-inside text-base-content/80 text-base sm:text-lg font-medium space-y-2">
+        <li *ngFor="let item of funcionesRealizadas">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Card: Entregables -->
+  <div class="bg-base-200 p-8 rounded-2xl shadow-md space-y-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-purple-600 flex items-center gap-2">📁 Entregables</h2>
+    <ul class="list-disc list-inside text-base-content/80 text-base sm:text-lg font-medium space-y-2">
+      <li *ngFor="let item of entregables">
+        <a [href]="item.url" target="_blank" class="link link-primary link-hover">
+          {{ item.titulo }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Modal -->
+<dialog id="mi_modal" class="modal">
+  <div class="modal-box text-center">
+    <h3 class="font-bold text-lg text-primary mb-4">Ver más sobre mi experiencia</h3>
+    <p class="text-base-content/80 text-base mb-6">
+      Puedes acceder al documento completo de mi experiencia haciendo clic en el siguiente botón:
+    </p>
+    <a href="https://docs.google.com/document/d/1NhNpyjJ2i1QbT8_neSfpCK4xCOFQB_1YSCfrzfz7fAg/edit?usp=sharing" target="_blank" class="btn btn-accent w-full">
+      Abrir Documento
+    </a>
+    <form method="dialog" class="mt-4">
+      <button class="btn w-full">Cerrar</button>
+    </form>
+  </div>
+</dialog>

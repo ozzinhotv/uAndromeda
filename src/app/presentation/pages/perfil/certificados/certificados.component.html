@@ -1,0 +1,22 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 animate__animated animate__fadeIn">
+  <div 
+    *ngFor="let cert of certificados"
+    class="border-2 border-[#138496] rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.06)] transform transition-transform duration-200 hover:scale-[1.02] bg-white overflow-hidden"
+  >
+    <!-- Imagen -->
+    <figure class="aspect-[4/3] overflow-hidden">
+      <img 
+        [src]="cert.imagen" 
+        [alt]="cert.alt" 
+        class="w-full h-full object-cover object-center" />
+    </figure>
+
+    <!-- Cuerpo -->
+    <div class="p-4">
+      <h2 class="text-[#138496] font-semibold text-lg">
+        {{ cert.titulo }}
+      </h2>
+      <p class="text-base-content/80 text-sm mt-1">{{ cert.descripcion }}</p>
+    </div>
+  </div>
+</div>
